@@ -1,8 +1,8 @@
 /*
  * Java
  *
- * Copyright 2020-2024 MicroEJ Corp. All rights reserved.
+ * Copyright 2020-2026 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 @ej.annotation.NonNullByDefault
-package com.microej.example.protobuf3example;
+package com.microej.example.protobufexample;

@@ -1,19 +1,18 @@
 /*
  * Java
  *
- * Copyright 2020-2024 MicroEJ Corp. All rights reserved.
+ * Copyright 2020-2026 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
-package com.microej.example.protobuf3example;
+package com.microej.example.protobufexample;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.logging.Logger;
 
 import com.google.protobuf.Timestamp;
-import com.microej.example.protobuf3example.AppProto.AppMessage;
-import com.microej.example.protobuf3example.AppProto.Encryption;
+import com.microej.example.protobufexample.AppProto.AppMessage;
+import com.microej.example.protobufexample.AppProto.Encryption;
 
 /**
  * Serializes a message to a byte array using Protobuf.
@@ -28,9 +27,9 @@ public class Main {
 	 * Entry point of the example.
 	 *
 	 * @param args
-	 *		not used.
+	 *            not used.
 	 * @throws IOException
-	 *		if an error occurs during the serialization or deserialization.
+	 *             if an error occurs during the serialization or deserialization.
 	 */
 	public static void main(String[] args) throws IOException {
 		byte[] array = serialize();
@@ -45,12 +44,13 @@ public class Main {
 		Timestamp.Builder timestampBuilder = Timestamp.newBuilder();
 		timestampBuilder.setSeconds(System.currentTimeMillis() / 1000);
 		Timestamp date = timestampBuilder.build();
-		messageBuilder.setId(42).setSubject("Hello").setMessageContent("Hello World!").setDate(date).setEncryption(Encryption.PGP);
+		messageBuilder.setId(42).setSubject("Hello").setMessageContent("Hello World!").setDate(date)
+				.setEncryption(Encryption.PGP);
 		AppMessage message = messageBuilder.build();
 
-		ByteArrayOutputStream output = new ByteArrayOutputStream();
-		message.writeTo(output);
-		return output.toByteArray();
+		byte[] output = message.toByteArray();
+		logger.info("Serialized into " + output.length + " bytes");
+		return output;
 	}
 
 	private static void deserialize(byte[] array) throws IOException {

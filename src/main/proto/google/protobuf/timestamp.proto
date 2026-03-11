@@ -1,5 +1,6 @@
 // Protocol Buffers - Google's data interchange format
 // Copyright 2008 Google Inc.  All rights reserved.
+// Copyright 2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
 // https://developers.google.com/protocol-buffers/
 //
 // Redistribution and use in source and binary forms, with or without
@@ -29,6 +30,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 syntax = "proto3";
+option optimize_for = LITE_RUNTIME;
 
 package google.protobuf;
 

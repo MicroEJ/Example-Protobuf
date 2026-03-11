@@ -1,29 +1,30 @@
 /*
  * protobuf
  * 
- * Copyright 2020-2024 MicroEJ Corp. All rights reserved.
+ * Copyright 2020-2026 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
  */
 
 syntax = "proto3";
- 
+option optimize_for = LITE_RUNTIME;
+
 package com.microej.example.protobuf3example;
 
-option java_package = "com.microej.example.protobuf3example";
+option java_package = "com.microej.example.protobufexample";
 option java_outer_classname = "AppProto";
 
 import "google/protobuf/timestamp.proto";
 
 enum Encryption {
-	NONE = 0;
-	PGP = 1;
-	SMIME = 2;
+  NONE = 0;
+  PGP = 1;
+  SMIME = 2;
 }
 
 message AppMessage {
-	int32 id = 1;
-    string subject = 2;
-	string messageContent = 3;
-	google.protobuf.Timestamp date = 4;
-	Encryption encryption = 5;
+  int32 id = 1;
+  string subject = 2;
+  string messageContent = 3;
+  google.protobuf.Timestamp date = 4;
+  Encryption encryption = 5;
 }

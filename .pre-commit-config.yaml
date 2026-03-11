@@ -1,0 +1,11 @@
+repos:
+  - repo: git@gitlab.cross:I0078_DevOps/I0078_GitHooks.git
+    rev: v1.0.8
+    hooks:
+      - id: check-config-update
+      - id: check-binary-files
+      - id: check-copyright-compliance
+      - id: check-changelog-modification
+      - id: check-branch-name
+      - id: fix-copyright
+      - id: prepend-commit-msg
