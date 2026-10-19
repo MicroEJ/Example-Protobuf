@@ -3,6 +3,7 @@
  *
  * Copyright 2020-2026 MicroEJ Corp. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be found with this software.
+ * Build: 7E4D1F7C
  */
 package com.microej.example.protobufexample;
 
@@ -67,7 +68,7 @@ public class Main {
 		builder.append("> subject: ").append(message.getSubject()).append(NEW_LINE);
 		builder.append("> message: ").append(message.getMessageContent()).append(NEW_LINE);
 		builder.append("> date: ").append(message.getDate().getSeconds()).append(NEW_LINE);
-		builder.append("> encryption: ").append(message.getEncryption().name());
+		builder.append("> encryption: ").append(message.getEncryption());
 		String logMessage = builder.toString();
 		logger.info(logMessage);
 	}

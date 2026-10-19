@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.microej.example"
-version = "3.0.0"
+version = "3.1.0"
 
 microej {
     applicationEntryPoint = "com.microej.example.protobufexample.Main"
@@ -19,7 +19,7 @@ microej {
 }
 
 // --- Protobuf library version selection ---
-// --- Either "protobuf4" or "protobuf3". Favor Protobuf4 over Protobuf3 for security and maintainability reasons. ---
+// --- Either "protobuf4" or "protobuf3". Favor Protobuf4 over Protobuf3 for performance, security and maintainability reasons. ---
 val protobufLibraryVersion =
     "protobuf4" // /!\ Run gradle clean after changing the library version, or the build will fail because of stale files
 
@@ -55,7 +55,7 @@ dependencies {
     implementation("ej.library.eclasspath:bytebuffer:1.2.0")
 
     if (isV4) {
-        val protobuf4Version = "1.0.1"
+        val protobuf4Version = "2.0.0"
         implementation("com.google:protobuf4:$protobuf4Version")
         protocTools("com.google:protobuf4:$protobuf4Version:tools@zip")
     } else {

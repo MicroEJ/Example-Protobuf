@@ -2,7 +2,7 @@
 
 # Overview
 
-This example project shows how to use Protobuf with MicroEJ.
+This example project shows how to use Protobuf4 or Protobuf3 with MicroEJ.
 
 Protobuf is a Google's mechanism for serializing structured data. Protobuf consists in:
 
@@ -20,7 +20,7 @@ This example works with both MicroEJ's Protobuf3 and Protobuf4 libraries.
 One can choose the library version to use by defining the `protobufLibraryVersion` settings in the `build.gradle.kts`
 file.
 
-It is recommended to favor Protobuf4 over Protobuf3, for security and maintainability reasons.
+It is recommended to favor Protobuf4 over Protobuf3, for performance, security and maintainability reasons.
 
 ## Project structure
 
@@ -112,3 +112,4 @@ None.
 _Markdown_  
 _Copyright 2020-2026 MicroEJ Corp. All rights reserved._  
 _Use of this source code is governed by a BSD-style license that can be found with this software._  
+_Build: 7E4D1F7C_
